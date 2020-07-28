@@ -5,10 +5,15 @@ import android.os.Bundle
 import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 class MainActivity : AppCompatActivity() {
+    // variable global
+    lateinit var diceImage: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        diceImage = findViewById(R.id.dice1_id)
 
         btn_roll.setOnClickListener {
             rollDice()
@@ -17,9 +22,9 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun rollDice() {
-        val randomNumber = (1..6).random()
 
         val diceImage = findViewById<ImageView>(R.id.dice1_id)
+        val randomNumber = (1..6).random()
 
         val drawableResource = when (randomNumber) {
             1 -> R.drawable.dice_1
