@@ -20,13 +20,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     private fun rollDice() {
 
         val diceImage = findViewById<ImageView>(R.id.dice1_id)
-        val randomNumber = (1..6).random()
 
-        val drawableResource = when (randomNumber) {
+        val drawableResource = when ((1..6).random()) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
